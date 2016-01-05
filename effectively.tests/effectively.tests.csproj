@@ -76,6 +76,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BreakoutClass\The_person.cs" />
     <Compile Include="ExtractAndOverride\The_order.cs" />
     <Compile Include="ExtractInterface\The_invoice_service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
