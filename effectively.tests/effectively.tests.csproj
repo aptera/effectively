@@ -39,6 +39,10 @@
       <HintPath>..\packages\NUnit3TestAdapter.3.0.8-ctp-8\lib\Mono.Cecil.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.engine, Version=3.0.5813.39036, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit3TestAdapter.3.0.8-ctp-8\lib\nunit.engine.dll</HintPath>
       <Private>False</Private>
@@ -73,6 +77,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ExtractAndOverride\The_order.cs" />
+    <Compile Include="ExtractInterface\The_invoice_service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
