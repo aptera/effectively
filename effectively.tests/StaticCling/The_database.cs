@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
+﻿namespace effectively.tests.StaticCling {
+    using NUnit.Framework;
 
-namespace effectively.tests.StaticCling {
     [TestFixture]
     public class The_database {
 
@@ -9,7 +9,7 @@ namespace effectively.tests.StaticCling {
 
             [Test]
             public void logs_the_sql() {
-
+                Assert.Fail("Not implemented!");
             }
         }
     }

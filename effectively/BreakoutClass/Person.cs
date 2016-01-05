@@ -9,7 +9,12 @@
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        // add a DisplayName property
-        // that lists a sortable full name (Last, First).
+
+        // Make this sortable by last name: Last, First.
+        public string DisplayName {
+            get {
+                return string.Join(" ", FirstName, LastName);
+            }
+        }
     }
 }

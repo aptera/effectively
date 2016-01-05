@@ -24,6 +24,7 @@
             public void sets_the_http_status_to_ok() {
                 var invoice = _service.GetInvoice(1);
                 // ???
+                Assert.Fail("Not implemented!");
             }
 
         }

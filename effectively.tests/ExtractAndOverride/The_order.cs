@@ -4,10 +4,6 @@
 
     [TestFixture]
     public class The_order {
-        [Test]
-        public void is_testable() {
-            var order = new Order();
-        }
 
         [TestFixture]
         class when_adding_an_order {
