@@ -80,6 +80,7 @@
     <Compile Include="ExtractAndOverride\The_order.cs" />
     <Compile Include="ExtractInterface\The_invoice_service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticCling\The_database.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

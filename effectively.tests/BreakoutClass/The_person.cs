@@ -9,5 +9,7 @@
             var person = new Person("bob");
             // kaboom
         }
+
+        // has a sortable display name property
     }
 }

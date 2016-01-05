@@ -48,6 +48,8 @@
     <Compile Include="ExtractInterface\InvoiceDto.cs" />
     <Compile Include="ExtractInterface\InvoiceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticCling\Logger.cs" />
+    <Compile Include="StaticCling\Database.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
