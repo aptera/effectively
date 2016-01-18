@@ -43,8 +43,8 @@
   <ItemGroup>
     <Compile Include="BreakoutClass\FileSystem.cs" />
     <Compile Include="BreakoutClass\Person.cs" />
-    <Compile Include="ExtractAndOverride\Order.cs" />
-    <Compile Include="ExtractAndOverride\User.cs" />
+    <Compile Include="ExtractAndOverride\OrderService.cs" />
+    <Compile Include="ExtractAndOverride\UserService.cs" />
     <Compile Include="InterfaceIndirection\InvoiceDto.cs" />
     <Compile Include="InterfaceIndirection\InvoiceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
