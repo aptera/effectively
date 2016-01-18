@@ -22,8 +22,5 @@
             }
         }
     }
-
-    public class Order
-    {
-    }
 }
+    

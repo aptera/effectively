@@ -1,19 +1,12 @@
-﻿namespace effectively.ExtractAndOverride {
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    public class Order {
-        private User _user;
-        public Order() {
-            _user = new User();
-        }
-
-        public bool Add() {
-            if (_user.ValidUser) {
-                //do something
-                return true;
-            } else {
-                //dont add send an exception and log it
-                return false;
-            }
-        }
+namespace effectively.ExtractAndOverride
+{
+    public class Order
+    {
     }
 }
