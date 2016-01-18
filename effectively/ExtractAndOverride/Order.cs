@@ -8,5 +8,6 @@ namespace effectively.ExtractAndOverride
 {
     public class Order
     {
+        public int Amount;
     }
 }
