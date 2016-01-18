@@ -7,25 +7,12 @@
 
         [TestFixture]
         public class when_getting_an_invoice {
-            private InvoiceService _service;
 
-            [SetUp]
-            public void SetUp() {
-                _service = new InvoiceService();
-            }
+            //the invoice number is the invoice Id as a string
 
-            [Test]
-            public void returns_an_invoice_with_a_matching_id() {
-                var invoice = _service.GetInvoice(1);
-                Assert.AreEqual(1, invoice.Id);
-            }
 
-            [Test]
-            public void sets_the_http_status_to_ok() {
-                var invoice = _service.GetInvoice(1);
-                // ???
-                Assert.Fail("Not implemented!");
-            }
+            //Given an invoice prefix (cookie)
+            //the invoice number is the prefix + invoice Id
 
         }
     }
