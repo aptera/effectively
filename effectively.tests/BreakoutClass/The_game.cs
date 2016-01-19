@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using Moq;
 
-
 namespace effectively.tests.BreakoutClass
 {
     [TestFixture]
@@ -14,15 +13,15 @@ namespace effectively.tests.BreakoutClass
     {
 
         //Given the player has just gotten out of the penalty box
-        //  The players place is only advanced by half of the current roll
+        //  The Players place is only advanced by one less than the current roll
 
         [TestFixture]
         public class GivenThePlayerHasJustGottenOutOfThePenaltyBox
         {
             [Test]
-            public void ThenThePlayersPlaceIsOnlyAdvancedByHalfOfTheCurrentRoll()
+            public void ThenThePlayersPlaceIsOnlyAdvancedByOneLessThanTheCurrentRoll()
             {
-                
+
             }
         }
     }
