@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+using Moq;
+
+namespace effectively.tests.BreakoutClass
+{
+    [TestFixture]
+    public class The_page_renderer
+    {
+        //Given has the 2016 attribute
+        //  when the page is being torn down
+        //      add the new version !include argument
+    }
+}

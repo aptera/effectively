@@ -11,7 +11,6 @@
             //  The order cannot be saved
 
             //  Given the order amount is 0 or positive
-            //  The order can be saved
-        }
+            //  The order can be saved 
     }
 }

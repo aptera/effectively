@@ -41,8 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BreakoutClass\FileSystem.cs" />
-    <Compile Include="BreakoutClass\Person.cs" />
+    <Compile Include="BreakoutClass\PageCrawlerImpl.cs" />
+    <Compile Include="BreakoutClass\PageData.cs" />
+    <Compile Include="BreakoutClass\PathParser.cs" />
+    <Compile Include="BreakoutClass\SuiteResponder.cs" />
+    <Compile Include="BreakoutClass\PageRender.cs" />
+    <Compile Include="BreakoutClass\WikiFileInfo.cs" />
+    <Compile Include="BreakoutClass\WikiPage.cs" />
+    <Compile Include="BreakoutClass\WikiPagePath.cs" />
     <Compile Include="ExtractAndOverride\Order.cs" />
     <Compile Include="ExtractAndOverride\OrderService.cs" />
     <Compile Include="ExtractAndOverride\UserService.cs" />
