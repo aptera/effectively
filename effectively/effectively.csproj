@@ -41,14 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BreakoutClass\PageCrawlerImpl.cs" />
-    <Compile Include="BreakoutClass\PageData.cs" />
-    <Compile Include="BreakoutClass\PathParser.cs" />
-    <Compile Include="BreakoutClass\SuiteResponder.cs" />
-    <Compile Include="BreakoutClass\PageRender.cs" />
-    <Compile Include="BreakoutClass\WikiFileInfo.cs" />
-    <Compile Include="BreakoutClass\WikiPage.cs" />
-    <Compile Include="BreakoutClass\WikiPagePath.cs" />
+    <Compile Include="BreakoutClass\Game.cs" />
+    <Compile Include="BreakoutClass\GameRunner.cs" />
     <Compile Include="ExtractAndOverride\Order.cs" />
     <Compile Include="ExtractAndOverride\OrderService.cs" />
     <Compile Include="ExtractAndOverride\UserService.cs" />
@@ -58,6 +52,7 @@
     <Compile Include="StaticCling\Logger.cs" />
     <Compile Include="StaticCling\Database.cs" />
     <Compile Include="StaticCling\PeopleSearcher.cs" />
+    <Compile Include="StaticCling\Person.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExtractInterface\" />
