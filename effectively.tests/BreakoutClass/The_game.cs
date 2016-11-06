@@ -19,9 +19,10 @@ namespace effectively.tests.BreakoutClass
         public class GivenThePlayerHasJustGottenOutOfThePenaltyBox
         {
             [Test]
+            [Ignore("This needs to be implemented!")]
             public void ThenThePlayersPlaceIsOnlyAdvancedByOneLessThanTheCurrentRoll()
             {
-
+                Assert.Fail("Not implemented!");
             }
         }
     }
