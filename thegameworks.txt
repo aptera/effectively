@@ -1,81 +1,4 @@
-﻿using effectively.BreakoutClass;
-using NUnit.Framework;
-using System;
-using System.IO;
-using UglyTrivia;
-
-namespace effectively.tests.BreakoutClass {
-    [TestFixture]
-    public class The_game {
-        private static Game aGame;
-        private static Mover mover;
-
-        [Test]
-        public void Works() {
-
-            FileStream fs = new FileStream("thegameworks.txt", FileMode.Create);
-            TextWriter tmp = Console.Out;
-            StreamWriter sw = new StreamWriter(fs);
-            Console.SetOut(sw);
-            bool notAWinner;
-
-            Game aGame = new Game();
-
-            aGame.addPlayer("Chet");
-            aGame.addPlayer("Pat");
-            aGame.addPlayer("Sue");
-
-            Random rand = new Random(1);
-
-            do {
-
-                aGame.roll(rand.Next(5) + 1);
-
-                if (rand.Next(9) == 7) {
-                    notAWinner = aGame.wrongAnswer();
-                } else {
-                    notAWinner = aGame.wasCorrectlyAnswered();
-                }
-
-
-
-            } while (notAWinner);
-
-            Console.SetOut(tmp);
-            sw.Close();
-
-            Assert.AreEqual(ApprovedTest, File.ReadAllText(fs.Name));
-        }
-
-
-        [TestFixture]
-        public class GivenThePlayerHasJustGottenOutOfThePenaltyBox {
-            [Test]
-            public void ThenThePlayersPlaceIsOnlyAdvancedByOneLessThanTheCurrentRoll() {
-                ArrangeGame();
-                mover.MakeNormalMove(5, 0, true);
-                Assert.AreEqual(4, aGame.places[0]);
-            }
-        }
-
-        [TestFixture]
-        public class GivenThePlayerNotInThePenaltyBox {
-            [Test]
-            public void ThenThePlayerMovesTheCurrentRoll() {
-                ArrangeGame();
-                mover.MakeNormalMove(5, 0, false);
-                Assert.AreEqual(5, aGame.places[0]);
-            }
-        }
-
-        private static void ArrangeGame() {
-            aGame = new Game();
-            mover = new Mover(aGame);
-            aGame.addPlayer("mindy");
-            aGame.places[0] = 0;
-        }
-
-        private string ApprovedTest = @"Chet was added
+Chet was added
 They are player number 1
 Pat was added
 They are player number 2
@@ -193,6 +116,3 @@ The category is Science
 Science Question 4
 Answer was corrent!!!!
 Chet now has 6 Gold Coins.
-";
-    }
-}

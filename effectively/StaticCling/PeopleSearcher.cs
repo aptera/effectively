@@ -9,5 +9,7 @@ namespace effectively.StaticCling
         {
             return Database.Query<Person>("select * from Person where Name like '%" + query + "%'");
         }
+
+
     }
 }
