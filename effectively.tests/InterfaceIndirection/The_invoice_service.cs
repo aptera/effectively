@@ -8,7 +8,7 @@
         [TestFixture]
         public class when_getting_an_invoice {
 
-            //the invoice number is the invoice Id as a string
+            //the invoice number is the invoice Id as an int
 
 
             //Given an invoice prefix (cookie)
