@@ -1,6 +1,6 @@
 ﻿namespace effectively.ExtractAndOverride
 {
-    internal class UserService
+    public class UserService
     {
         public bool isValidUser { get; set; }
     }

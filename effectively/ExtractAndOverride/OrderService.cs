@@ -3,7 +3,7 @@
 
     public class OrderService
     {
-        private UserService _userService;
+        protected UserService _userService;
         public OrderService()
         {
             _userService = new UserService();
