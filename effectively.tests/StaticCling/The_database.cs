@@ -1,5 +1,6 @@
 ﻿namespace effectively.tests.StaticCling {
-    using NUnit.Framework;
+	using effectively.StaticCling;
+	using NUnit.Framework;
 
     [TestFixture]
     public class The_database {
@@ -11,6 +12,8 @@
             [Ignore("This needs to be implemented!")]
 
             public void logs_the_sql() {
+				var searcher = new PeopleSearcher();
+				searcher.Search("Wayne");
                 Assert.Fail("Not implemented!");
             }
         }
