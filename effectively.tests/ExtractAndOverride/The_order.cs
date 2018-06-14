@@ -9,30 +9,13 @@
 		[TestFixture]
 		public class GivenTheCurrentUserIsValid
 		{
-
-			[Test]
-			public void GivenTheOrderAmountIsNegative_TheOrderCannotBeSaved()
-			{
-				Assert.IsFalse(OrderWithAmountIsValid(-1));
-			}
-
-			[Test]
-			public void GivenTheOrderAmountIsZero_TheOrderCanBeSaved()
-			{
-				Assert.IsTrue(OrderWithAmountIsValid(0));
-			}
-			
-			[Test]
-			public void GivenTheOrderAmountIsGreaterThanZero_TheOrderCanBeSaved()
-			{
-				Assert.IsTrue(OrderWithAmountIsValid(1));
-			}
-
-			private bool OrderWithAmountIsValid(int amount)
+			[TestCase(-1, ExpectedResult = false, TestName = "Given an order with a negative amount does not save the order")]
+			[TestCase(1, ExpectedResult = true, TestName = "Given an order with a zero amount saves the order")]
+			[TestCase(0, ExpectedResult = true, TestName = "Given an order with a positive amount saves the order")]
+			public bool OrderWithAmountIsValid(int amount)
 			{
 				var order = new Order { Amount = amount };
 				var os = new TestableOrderService { UserIsValid = true };
-
 				return os.Add(order);
 			}
 		}
@@ -49,7 +32,7 @@
 			}
 		}
 
-		class TestableOrderService 
+		class TestableOrderService
 			: OrderService
 		{
 			public bool UserIsValid { get; set; }
