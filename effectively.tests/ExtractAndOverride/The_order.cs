@@ -1,9 +1,8 @@
 ﻿namespace effectively.tests.ExtractAndOverride
 {
-    using effectively.ExtractAndOverride;
-    using NUnit.Framework;
+	using NUnit.Framework;
 
-    [TestFixture]
+	[TestFixture]
     public class The_order
     {
             //Given the current user is valid
