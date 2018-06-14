@@ -2,11 +2,23 @@
 {
     public class OrderService
     {
+		private UserService _userService;
+
+		public OrderService(UserService userService)
+		{
+			_userService = userService;
+		}
+
+		public OrderService()
+		{
+			_userService = new UserService();
+		}
+
 	   public bool Add(Order order)
 		{
-			UserService userService = GetUserService();
+			//_userService = GetUserService();
 
-			if (userService.isValidUser &&  order.Amount >= 0)//Can the current user save an order
+			if (_userService.isValidUser &&  order.Amount >= 0)//Can the current user save an order
 			{
 				//save order
 				return true;
