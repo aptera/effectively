@@ -5,7 +5,7 @@
         public bool Add(Order order)
         {
             var userService = new UserService();
-            if (userService.isValidUser)//Can the current user save an order
+            if (userService.IsValidUser)//Can the current user save an order
             {
                 //save order
                 return true;
