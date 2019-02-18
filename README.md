@@ -18,7 +18,9 @@ Your mission, should you choose to accept it, is to get the `InvoiceService.GetI
 **Constraints**. Solve this one *without* using Extract and Override.
 
 ### 3. Static Cling
-We need to add logging to the Database class, so that every SQL query is logged. The twist? Statics everywhere.
+We need to add logging to the Database class, so that every SQL query is logged.
+
+**The twist**. Statics everywhere.
 
 **Constraints**. The static calls to `Database.Query()` and `Logger.Log()` must still work, as they are in heavy use across the code base.
 
