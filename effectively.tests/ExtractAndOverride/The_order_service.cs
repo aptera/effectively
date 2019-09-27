@@ -10,7 +10,7 @@
 		{
 			[Test]
 			[Ignore("This needs to be implemented!")]
-			public void The_order_cannot_be_saved()
+			public void The_order_cannot_be_placed()
 			{
 
 			}
@@ -24,7 +24,7 @@
 			{
 				[Test]
 				[Ignore("This needs to be implemented!")]
-				public void The_order_can_be_saved()
+				public void The_order_can_be_placed()
 				{
 
 				}
@@ -35,7 +35,7 @@
 			{
 				[Test]
 				[Ignore("This needs to be implemented!")]
-				public void The_order_cannot_be_saved()
+				public void The_order_cannot_be_placed()
 				{
 
 				}
