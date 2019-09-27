@@ -76,10 +76,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BreakoutClass\The_game.cs" />
-    <Compile Include="ExtractAndOverride\The_order.cs" />
+    <Compile Include="ExtractAndOverride\The_order_service.cs" />
     <Compile Include="InterfaceIndirection\The_invoice_service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticCling\The_database.cs" />
+    <Compile Include="StaticCling\The_people_searcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -2,7 +2,7 @@
 {
     public class OrderService
     {
-        public bool Add(Order order)
+        public bool CanPlace(Order order)
         {
             var userService = new UserService();
             if (userService.IsValidUser)//Can the current user save an order

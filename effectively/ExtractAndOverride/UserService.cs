@@ -2,6 +2,6 @@
 {
     public class UserService
     {
-        public bool IsValidUser { get; set; }
+		public bool IsValidUser { get; set; } = false;
     }
 }
