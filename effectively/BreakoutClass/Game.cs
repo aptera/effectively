@@ -73,20 +73,16 @@ namespace UglyTrivia
             if (inPenaltyBox[currentPlayer])
             {
                 if (roll % 2 != 0)
-                {
-                    isGettingOutOfPenaltyBox = true;
+				{
+					GetOutOfPenaltyBox(roll);
 
-                    Log(players[currentPlayer] + " is getting out of the penalty box");
-                    places[currentPlayer] = places[currentPlayer] + roll;
-                    if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-
-                    Log(players[currentPlayer]
-                            + "'s new location is "
-                            + places[currentPlayer]);
-                    Log("The category is " + currentCategory());
-                    askQuestion();
-                }
-                else
+					Log(players[currentPlayer]
+							+ "'s new location is "
+							+ places[currentPlayer]);
+					Log("The category is " + currentCategory());
+					askQuestion();
+				}
+				else
                 {
                     Log(players[currentPlayer] + " is not getting out of the penalty box");
                     isGettingOutOfPenaltyBox = false;
@@ -108,7 +104,17 @@ namespace UglyTrivia
 
         }
 
-        private void askQuestion()
+		public int GetOutOfPenaltyBox(int roll)
+		{
+			isGettingOutOfPenaltyBox = true;
+
+			Log(players[currentPlayer] + " is getting out of the penalty box");
+			places[currentPlayer] = places[currentPlayer] + roll - 1;
+			if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+            return places[currentPlayer];
+		}
+
+		private void askQuestion()
         {
             if (currentCategory() == "Pop")
             {

@@ -18,23 +18,17 @@ namespace effectively.tests.BreakoutClass
 
 			protected override void Log(string message)
 			{
-
 				MessageLog += message + Environment.NewLine;
-
 			}
 		}
 
-        //Given the player has just gotten out of the penalty box
-        //  The Players place is only advanced by one less than the current roll
         [Test]
         public void Approval()
 		{
-            TestableGame aGame = new TestableGame();
-            bool notAWinner;
+            var aGame = new TestableGame();
 
             aGame.add("Chet");
             aGame.add("Pat");
-           // aGame.add("Sue");
 
             aGame.roll(4);
             aGame.wasCorrectlyAnswered();
@@ -61,19 +55,20 @@ namespace effectively.tests.BreakoutClass
             aGame.wasCorrectlyAnswered();
 
             Assert.AreEqual(ApprovalResults + Environment.NewLine, aGame.MessageLog);
-           
         }
 
         [TestFixture]
         public class GivenThePlayerHasJustGottenOutOfThePenaltyBox
         {
             [Test]
-            [Ignore("This needs to be implemented!")]
             public void ThenThePlayersPlaceIsOnlyAdvancedByOneLessThanTheCurrentRoll()
             {
-                Assert.Fail("Not implemented!");
+                TestableGame game = new TestableGame();
+                game.add("Larry");
+                Assert.AreEqual(4, game.GetOutOfPenaltyBox(5));
             }
         }
+
         const string ApprovalResults = @"Chet was added
 They are player number 1
 Pat was added
@@ -110,25 +105,25 @@ Chet is not getting out of the penalty box
 Pat is the current player
 They have rolled a 3
 Pat is getting out of the penalty box
-Pat's new location is 9
-The category is Science
-Science Question 1
+Pat's new location is 8
+The category is Pop
+Pop Question 1
 Answer was correct!!!!
 Pat now has 1 Gold Coins.
 Chet is the current player
 They have rolled a 5
 Chet is getting out of the penalty box
-Chet's new location is 2
-The category is Sports
-Sports Question 1
+Chet's new location is 1
+The category is Science
+Science Question 1
 Question was incorrectly answered
 Chet was sent to the penalty box
 Pat is the current player
 They have rolled a 1
 Pat is getting out of the penalty box
-Pat's new location is 10
-The category is Sports
-Sports Question 2
+Pat's new location is 8
+The category is Pop
+Pop Question 2
 Answer was correct!!!!
 Pat now has 2 Gold Coins.";
     }
