@@ -26,6 +26,8 @@ namespace UglyTrivia
 
         public Game()
         {
+            Console.WriteLine("Git sucks!");
+
             for (int i = 0; i < 50; i++)
             {
                 popQuestions.AddLast("Pop Question " + i);
