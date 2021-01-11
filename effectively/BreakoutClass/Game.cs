@@ -80,16 +80,7 @@ namespace UglyTrivia
 
             if (inPenaltyBox[currentPlayer])
             {
-                if (isOdd(rolledValue))
-                {
-                    playerGetsOutOfPenaltyBox();
-                    advancePlayer(rolledValue);
-                    nextRound();
-                }
-                else
-                {
-                    playerDoesNotGetOutOfPenaltyBox();
-                }
+                rollingWhileInPenalty(rolledValue);
             }
             else
             {
@@ -97,6 +88,26 @@ namespace UglyTrivia
                 nextRound();
             }
         }
+
+        private void rollingWhileInPenalty(int rolledValue)
+        {
+            if (isOdd(rolledValue))
+            {
+                releasePlayerNextRound(rolledValue);
+            }
+            else
+            {
+                playerDoesNotGetOutOfPenaltyBox();
+            }
+        }
+
+        private void releasePlayerNextRound(int rolledValue)
+        {
+            playerGetsOutOfPenaltyBox();
+            advancePlayer(rolledValue);
+            nextRound();
+        }
+
         private bool isOdd(int number)
         {
             return (number % 2 != 0);
@@ -169,47 +180,56 @@ namespace UglyTrivia
         {
             if (inPenaltyBox[currentPlayer])
             {
-                if (isGettingOutOfPenaltyBox)
-                {
-                    Console.WriteLine("Answer was correct!!!!");
-                    purses[currentPlayer]++;
-                    Console.WriteLine(players[currentPlayer]
-                            + " now has "
-                            + purses[currentPlayer]
-                            + " Gold Coins.");
-
-                    bool winner = didPlayerWin();
-                    currentPlayer++;
-                    if (currentPlayer == players.Count) currentPlayer = 0;
-
-                    return winner;
-                }
-                else
-                {
-                    currentPlayer++;
-                    if (currentPlayer == players.Count) currentPlayer = 0;
-                    return true;
-                }
-
-
+                return checkInPenaltyBox();
 
             }
             else
             {
 
-                Console.WriteLine("Answer was corrent!!!!");
-                purses[currentPlayer]++;
-                Console.WriteLine(players[currentPlayer]
-                        + " now has "
-                        + purses[currentPlayer]
-                        + " Gold Coins.");
+                return removePlayerFromPenaltyBox();
 
-                bool winner = didPlayerWin();
-                currentPlayer++;
-                if (currentPlayer == players.Count) currentPlayer = 0;
-
-                return winner;
             }
+        }
+
+        private bool checkInPenaltyBox()
+        {
+            if (isGettingOutOfPenaltyBox)
+            {
+                return removePlayerFromPenaltyBox();
+            }
+            else
+            {
+                nextPlayer();
+
+                return true;
+            }
+        }
+
+        private bool removePlayerFromPenaltyBox()
+        {
+            awardCoins();
+
+            bool winner = didPlayerWin();
+
+            nextPlayer();
+
+            return winner;
+        }
+
+        private void nextPlayer()
+        {
+            currentPlayer++;
+            if (currentPlayer == players.Count) currentPlayer = 0;
+        }
+
+        private void awardCoins()
+        {
+            Console.WriteLine("Answer was correct!!!!");
+            purses[currentPlayer]++;
+            Console.WriteLine(players[currentPlayer]
+                    + " now has "
+                    + purses[currentPlayer]
+                    + " Gold Coins.");
         }
 
         public bool wrongAnswer()
