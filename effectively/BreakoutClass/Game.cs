@@ -135,38 +135,36 @@ namespace UglyTrivia
         {
             if (currentCategory() == QuestionType.Pop)
             {
-                Console.WriteLine(popQuestions.First());
-                popQuestions.RemoveFirst();
+                getQuestion(popQuestions);
             }
             if (currentCategory() == QuestionType.Science)
             {
-                Console.WriteLine(scienceQuestions.First());
-                scienceQuestions.RemoveFirst();
+                getQuestion(scienceQuestions);
             }
             if (currentCategory() == QuestionType.Sports)
             {
-                Console.WriteLine(sportsQuestions.First());
-                sportsQuestions.RemoveFirst();
+                getQuestion(sportsQuestions);
             }
             if (currentCategory() == QuestionType.Rock)
             {
-                Console.WriteLine(rockQuestions.First());
-                rockQuestions.RemoveFirst();
+                getQuestion(rockQuestions);
             }
         }
 
+        private void getQuestion(LinkedList<string> lists)
+        {
+            Console.WriteLine(lists.First());
+            lists.RemoveFirst();
+        }
 
         private QuestionType currentCategory()
         {
-            if (places[currentPlayer] == 0) return QuestionType.Pop;
-            if (places[currentPlayer] == 4) return QuestionType.Pop;
-            if (places[currentPlayer] == 8) return QuestionType.Pop;
-            if (places[currentPlayer] == 1) return QuestionType.Science;
-            if (places[currentPlayer] == 5) return QuestionType.Science;
-            if (places[currentPlayer] == 9) return QuestionType.Science;
-            if (places[currentPlayer] == 2) return  QuestionType.Sports;
-            if (places[currentPlayer] == 6) return  QuestionType.Sports;
-            if (places[currentPlayer] == 10) return QuestionType.Sports;
+            if (places[currentPlayer] % 4 == 0) return QuestionType.Pop;
+            
+            if (places[currentPlayer] % 4 == 1) return QuestionType.Science;
+            
+            if (places[currentPlayer] % 4 == 2) return  QuestionType.Sports;
+            
             return QuestionType.Rock;
         }
 
