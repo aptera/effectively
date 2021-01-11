@@ -6,6 +6,15 @@ namespace UglyTrivia
 {
     public class Game
     {
+
+       public enum QuestionType
+        {
+            Pop,
+            Science,
+            Rock,
+            Sports
+        }
+
         List<string> players = new List<string>();
 
         int[] places = new int[6];
@@ -25,30 +34,15 @@ namespace UglyTrivia
         {
             for (int i = 0; i < 50; i++)
             {
-                popQuestions.AddLast(createPopQuestion(i));
-                scienceQuestions.AddLast(createScienceQuestion(i));
-                sportsQuestions.AddLast(createSportsQuestion(i));
-                rockQuestions.AddLast(createRockQuestion(i));
+                popQuestions.AddLast(createQuestion(i,QuestionType.Pop));
+                scienceQuestions.AddLast(createQuestion(i,QuestionType.Science));
+                sportsQuestions.AddLast(createQuestion(i,QuestionType.Sports));
+                rockQuestions.AddLast(createQuestion(i,QuestionType.Rock));
             }
         }
-        public String createPopQuestion(int index)
+        public String createQuestion(int index, QuestionType type)
         {
-            return "Pop Question" + index;
-        }
-
-        public String createScienceQuestion(int index)
-        {
-            return "Science Question" + index;
-
-        }
-        public String createRockQuestion(int index)
-        {
-            return "Rock Question " + index;
-        }
-
-        public String createSportsQuestion(int index)
-        {
-            return "Sports Question" + index;
+            return $"{nameof(type)} Question {index}";
         }
 
         public bool isPlayable()
@@ -139,22 +133,22 @@ namespace UglyTrivia
         }
         private void askQuestion()
         {
-            if (currentCategory() == "Pop")
+            if (currentCategory() == QuestionType.Pop)
             {
                 Console.WriteLine(popQuestions.First());
                 popQuestions.RemoveFirst();
             }
-            if (currentCategory() == "Science")
+            if (currentCategory() == QuestionType.Science)
             {
                 Console.WriteLine(scienceQuestions.First());
                 scienceQuestions.RemoveFirst();
             }
-            if (currentCategory() == "Sports")
+            if (currentCategory() == QuestionType.Sports)
             {
                 Console.WriteLine(sportsQuestions.First());
                 sportsQuestions.RemoveFirst();
             }
-            if (currentCategory() == "Rock")
+            if (currentCategory() == QuestionType.Rock)
             {
                 Console.WriteLine(rockQuestions.First());
                 rockQuestions.RemoveFirst();
@@ -162,18 +156,18 @@ namespace UglyTrivia
         }
 
 
-        private String currentCategory()
+        private QuestionType currentCategory()
         {
-            if (places[currentPlayer] == 0) return "Pop";
-            if (places[currentPlayer] == 4) return "Pop";
-            if (places[currentPlayer] == 8) return "Pop";
-            if (places[currentPlayer] == 1) return "Science";
-            if (places[currentPlayer] == 5) return "Science";
-            if (places[currentPlayer] == 9) return "Science";
-            if (places[currentPlayer] == 2) return "Sports";
-            if (places[currentPlayer] == 6) return "Sports";
-            if (places[currentPlayer] == 10) return "Sports";
-            return "Rock";
+            if (places[currentPlayer] == 0) return QuestionType.Pop;
+            if (places[currentPlayer] == 4) return QuestionType.Pop;
+            if (places[currentPlayer] == 8) return QuestionType.Pop;
+            if (places[currentPlayer] == 1) return QuestionType.Science;
+            if (places[currentPlayer] == 5) return QuestionType.Science;
+            if (places[currentPlayer] == 9) return QuestionType.Science;
+            if (places[currentPlayer] == 2) return  QuestionType.Sports;
+            if (places[currentPlayer] == 6) return  QuestionType.Sports;
+            if (places[currentPlayer] == 10) return QuestionType.Sports;
+            return QuestionType.Rock;
         }
 
         public bool wasCorrectlyAnswered()
