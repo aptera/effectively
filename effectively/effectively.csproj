@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BreakoutClass\Game.cs" />
     <Compile Include="BreakoutClass\GameRunner.cs" />
+    <Compile Include="BreakoutClass\PlayerMover.cs" />
     <Compile Include="ExtractAndOverride\Order.cs" />
     <Compile Include="ExtractAndOverride\OrderService.cs" />
     <Compile Include="ExtractAndOverride\UserService.cs" />
