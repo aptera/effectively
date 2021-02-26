@@ -17,13 +17,10 @@ namespace effectively
 
         public int GetNextPlace()
         {
-
             int nextPlace = CurrentPlace + Roll;
             if (nextPlace > 11) nextPlace = nextPlace - 12;
 
-            if (IsInPenaltyBox)
-                nextPlace--;
-           
+            if (IsInPenaltyBox) nextPlace--;
            
             return nextPlace;
         }
