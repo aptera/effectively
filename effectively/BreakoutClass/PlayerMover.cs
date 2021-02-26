@@ -22,9 +22,8 @@ namespace effectively
             if (nextPlace > 11) nextPlace = nextPlace - 12;
 
             if (IsInPenaltyBox)
-            {
                 nextPlace--;
-            }
+           
            
             return nextPlace;
         }
