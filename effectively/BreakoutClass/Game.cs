@@ -1,4 +1,5 @@
-﻿using System;
+﻿using effectively;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,12 @@ namespace UglyTrivia
 
         List<string> players = new List<string>();
 
-        int[] places = new int[6];
+        protected int[] places = new int[6];
         int[] purses = new int[6];
 
-        bool[] inPenaltyBox = new bool[6];
+        protected bool[] inPenaltyBox = new bool[6];
+
+        
 
         LinkedList<string> popQuestions = new LinkedList<string>();
         LinkedList<string> scienceQuestions = new LinkedList<string>();
@@ -26,7 +29,7 @@ namespace UglyTrivia
 
         public Game()
         {
-            Console.WriteLine("Git sucks!");
+            
 
             for (int i = 0; i < 50; i++)
             {
@@ -78,8 +81,11 @@ namespace UglyTrivia
                     isGettingOutOfPenaltyBox = true;
 
                     Console.WriteLine(players[currentPlayer] + " is getting out of the penalty box");
-                    places[currentPlayer] = places[currentPlayer] + roll;
-                    if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+
+                    PlayerMover playerMover = new PlayerMover(places[currentPlayer], roll, isGettingOutOfPenaltyBox);
+                    places[currentPlayer] = playerMover.GetNextPlace();
+                    //places[currentPlayer] = places[currentPlayer] + roll;
+                    //if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 
                     Console.WriteLine(players[currentPlayer]
                             + "'s new location is "
@@ -96,9 +102,10 @@ namespace UglyTrivia
             }
             else
             {
-
-                places[currentPlayer] = places[currentPlayer] + roll;
-                if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+                PlayerMover playerMover = new PlayerMover(places[currentPlayer], roll, isGettingOutOfPenaltyBox);
+                places[currentPlayer] = playerMover.GetNextPlace();
+                //places[currentPlayer] = places[currentPlayer] + roll;
+                //if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 
                 Console.WriteLine(players[currentPlayer]
                         + "'s new location is "
@@ -206,11 +213,27 @@ namespace UglyTrivia
             return true;
         }
 
-
+        
         private bool didPlayerWin()
         {
             return !(purses[currentPlayer] == 6);
         }
+
+        //public int getPlayerPlace(int currentPlayer)
+        //{
+        //    return places[currentPlayer];
+
+        //}
+
+        //public void setCurrentPlace(int currentPlayer, int newCurrentPlace){
+        //    places[currentPlayer] = newCurrentPlace;
+        //}
+
+        //public void setIsInPenaltyBox(int currentPlayer, bool isInPenaltyBox)
+        //{
+        //    inPenaltyBox[currentPlayer] = isInPenaltyBox;
+        //}
+        
     }
 
 }

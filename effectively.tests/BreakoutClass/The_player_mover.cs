@@ -15,7 +15,7 @@ namespace effectively.tests.BreakoutClass
         {
             [TestCase(0, 5, ExpectedResult = 5)]
             [TestCase(5, 5, ExpectedResult = 10)]
-            [TestCase(11, 2, ExpectedResult = 1)]
+            [TestCase(11, 2, ExpectedResult = 11)]
             public int ThenThePlayersPlaceIsAdvancedByTheCurrentRoll(int currentPlace, int roll)
             {
                 PlayerMover playerMover = new PlayerMover(currentPlace, roll, false);
