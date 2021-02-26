@@ -41,6 +41,17 @@ namespace effectively.tests.BreakoutClass
         public class GivenThePlayerIsOutOfPenaltyBox
         {
 
+
+            [TestCase(0,2, ExpectedResult = 0)]
+            public int ThenThePlayerWillContinueWithNormalRolledValue(int currentPlace, int rolledValue)
+            {
+                TestableGame game = new TestableGame();
+                game.add("Person");
+                game.setCurrentPlaceTest(0, currentPlace);
+                game.setIsInPenaltyBoxTest(0, true);
+                game.roll(rolledValue);
+                return game.getPlayerPlaceTest(0);
+            }
            
         }
     }
